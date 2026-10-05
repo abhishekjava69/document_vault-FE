@@ -1,0 +1,764 @@
+ion-content {
+  --background: transparent;
+}
+
+/* =========================================
+   MAIN BACKGROUND
+========================================= */
+
+.login-background {
+
+  position: relative;
+
+  min-height: 100vh;
+
+  width: 100%;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  padding: 30px 15px;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      135deg,
+      #6a11cb 0%,
+      #2575fc 45%,
+      #ec1b9c 100%
+    );
+
+}
+
+
+/* =========================================
+   BACKGROUND DECORATIVE SHAPES
+========================================= */
+
+.shape {
+
+  position: absolute;
+
+  border-radius: 50%;
+
+  filter: blur(1px);
+
+  opacity: 0.45;
+
+  pointer-events: none;
+
+}
+
+.shape-1 {
+
+  width: 300px;
+
+  height: 300px;
+
+  top: -100px;
+
+  right: -80px;
+
+  background: #ff2ca8;
+
+}
+
+.shape-2 {
+
+  width: 350px;
+
+  height: 350px;
+
+  bottom: -150px;
+
+  left: -120px;
+
+  background: #ff2ca8;
+
+}
+
+.shape-3 {
+
+  width: 80px;
+
+  height: 80px;
+
+  right: 30px;
+
+  top: 45%;
+
+  background: #3d7cff;
+
+}
+
+
+/* =========================================
+   LOGIN CARD
+========================================= */
+
+.login-card {
+
+  position: relative;
+
+  z-index: 2;
+
+  width: 100%;
+
+  max-width: 520px;
+
+  padding: 45px 45px 35px;
+
+  border-radius: 40px;
+
+  background: rgba(255, 255, 255, 0.96);
+
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.25);
+
+}
+
+
+/* =========================================
+   LOGO
+========================================= */
+
+.logo-container {
+
+  display: flex;
+
+  justify-content: center;
+
+  margin-bottom: 15px;
+
+}
+
+.logo-icon {
+
+  position: relative;
+
+  width: 85px;
+
+  height: 85px;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  border-radius: 22px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #246bfd,
+      #9b2cff,
+      #ef21a8
+    );
+
+  box-shadow:
+    0 12px 30px rgba(82, 57, 230, 0.35);
+
+}
+
+.logo-icon > ion-icon:first-child {
+
+  font-size: 55px;
+
+  color: white;
+
+}
+
+.logo-icon .lock-icon {
+
+  position: absolute;
+
+  right: 5px;
+
+  bottom: 3px;
+
+  font-size: 27px;
+
+  padding: 6px;
+
+  border-radius: 8px;
+
+  color: #7c2ce8;
+
+  background: white;
+
+}
+
+
+/* =========================================
+   APPLICATION TITLE
+========================================= */
+
+.app-title {
+
+  margin: 10px 0 5px;
+
+  text-align: center;
+
+  font-size: 38px;
+
+  font-weight: 800;
+
+  letter-spacing: -1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #245dff,
+      #7928e8,
+      #ec25a9
+    );
+
+  -webkit-background-clip: text;
+
+  background-clip: text;
+
+  color: transparent;
+
+}
+
+.app-subtitle {
+
+  margin: 0;
+
+  text-align: center;
+
+  color: #7280a8;
+
+  font-size: 15px;
+
+  font-weight: 500;
+
+}
+
+
+/* =========================================
+   WELCOME SECTION
+========================================= */
+
+.welcome-section {
+
+  text-align: center;
+
+  margin-top: 40px;
+
+  margin-bottom: 25px;
+
+}
+
+.welcome-section h2 {
+
+  margin: 0 0 8px;
+
+  font-size: 34px;
+
+  font-weight: 750;
+
+  color: #17265f;
+
+}
+
+.welcome-section p {
+
+  margin: 0;
+
+  color: #7180a8;
+
+  font-size: 16px;
+
+}
+
+
+/* =========================================
+   INPUT FIELDS
+========================================= */
+
+.input-container {
+
+  display: flex;
+
+  align-items: center;
+
+  width: 100%;
+
+  height: 66px;
+
+  margin-top: 18px;
+
+  padding: 0 15px;
+
+  border-radius: 40px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 10px 30px rgba(45, 69, 150, 0.10);
+
+  border: 1px solid #f0f1fa;
+
+}
+
+.input-icon {
+
+  width: 45px;
+
+  height: 45px;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  flex-shrink: 0;
+
+  margin-right: 10px;
+
+  border-radius: 50%;
+
+  background: #f2f4ff;
+
+}
+
+.input-icon ion-icon {
+
+  font-size: 25px;
+
+  color: #6478af;
+
+}
+
+.input-container ion-input {
+
+  --padding-start: 0;
+
+  --padding-end: 5px;
+
+  --highlight-color-focused: transparent;
+
+  --highlight-color: transparent;
+
+  font-size: 16px;
+
+  color: #24345f;
+
+}
+
+.password-toggle {
+
+  --color: #7180ae;
+
+  --padding-start: 5px;
+
+  --padding-end: 5px;
+
+  margin: 0;
+
+}
+
+.password-toggle ion-icon {
+
+  font-size: 24px;
+
+}
+
+
+/* =========================================
+   REMEMBER / FORGOT
+========================================= */
+
+.options-row {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin: 22px 5px 25px;
+
+}
+
+.remember-section {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  color: #263868;
+
+  font-size: 14px;
+
+}
+
+.remember-section ion-checkbox {
+
+  --size: 20px;
+
+  --checkbox-background-checked: #e921c1;
+
+  --border-color-checked: #e921c1;
+
+  --border-radius: 50%;
+
+}
+
+.forgot-button {
+
+  border: none;
+
+  background: transparent;
+
+  color: #6828ed;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+}
+
+
+/* =========================================
+   LOGIN BUTTON
+========================================= */
+
+.login-button {
+
+  --background:
+    linear-gradient(
+      90deg,
+      #245df8,
+      #7630eb,
+      #ed24a8
+    );
+
+  --background-hover:
+    linear-gradient(
+      90deg,
+      #245df8,
+      #7630eb,
+      #ed24a8
+    );
+
+  --border-radius: 40px;
+
+  height: 62px;
+
+  margin: 5px 0 30px;
+
+  font-size: 19px;
+
+  font-weight: 650;
+
+  text-transform: none;
+
+  box-shadow:
+    0 12px 25px rgba(104, 45, 230, 0.25);
+
+}
+
+.login-button ion-icon {
+
+  font-size: 28px;
+
+}
+
+
+/* =========================================
+   SOCIAL SECTION
+========================================= */
+
+.social-section {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  color: #7b89ae;
+
+  font-size: 14px;
+
+  margin: 5px 0 20px;
+
+}
+
+.divider {
+
+  flex: 1;
+
+  height: 1px;
+
+  background: #dce0ed;
+
+}
+
+
+/* =========================================
+   SOCIAL BUTTONS
+========================================= */
+
+.social-buttons {
+
+  display: flex;
+
+  justify-content: center;
+
+  gap: 25px;
+
+  margin-bottom: 30px;
+
+}
+
+.social-button {
+
+  width: 58px;
+
+  height: 58px;
+
+  border: none;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 8px 20px rgba(40, 60, 130, 0.12);
+
+  cursor: pointer;
+
+  transition: transform 0.2s ease;
+
+}
+
+.social-button:hover {
+
+  transform: translateY(-3px);
+
+}
+
+.social-button ion-icon {
+
+  font-size: 27px;
+
+  color: #17265f;
+
+}
+
+.google-icon {
+
+  font-size: 25px;
+
+  font-weight: 800;
+
+  color: #4285f4;
+
+}
+
+
+/* =========================================
+   REGISTER SECTION
+========================================= */
+
+.register-section {
+
+  padding: 20px;
+
+  border-radius: 25px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f4f5ff,
+      #faf3ff
+    );
+
+  text-align: center;
+
+}
+
+.register-section p {
+
+  margin: 0 0 15px;
+
+  color: #6f7fa9;
+
+  font-size: 15px;
+
+}
+
+.register-button {
+
+  --border-radius: 35px;
+
+  --border-width: 2px;
+
+  --border-color: #6a2cff;
+
+  --color: #6a2cff;
+
+  height: 52px;
+
+  font-size: 17px;
+
+  font-weight: 650;
+
+  text-transform: none;
+
+}
+
+
+/* =========================================
+   MOBILE RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 600px) {
+
+  .login-background {
+
+    padding: 15px;
+
+    align-items: flex-start;
+
+    padding-top: 25px;
+
+  }
+
+  .login-card {
+
+    padding: 30px 22px 25px;
+
+    border-radius: 30px;
+
+  }
+
+  .logo-icon {
+
+    width: 70px;
+
+    height: 70px;
+
+  }
+
+  .logo-icon > ion-icon:first-child {
+
+    font-size: 45px;
+
+  }
+
+  .logo-icon .lock-icon {
+
+    font-size: 21px;
+
+  }
+
+  .app-title {
+
+    font-size: 30px;
+
+  }
+
+  .app-subtitle {
+
+    font-size: 13px;
+
+  }
+
+  .welcome-section {
+
+    margin-top: 30px;
+
+  }
+
+  .welcome-section h2 {
+
+    font-size: 28px;
+
+  }
+
+  .welcome-section p {
+
+    font-size: 14px;
+
+  }
+
+  .input-container {
+
+    height: 60px;
+
+  }
+
+  .options-row {
+
+    font-size: 12px;
+
+  }
+
+  .forgot-button {
+
+    font-size: 12px;
+
+  }
+
+  .login-button {
+
+    height: 58px;
+
+  }
+
+}
+
+
+/* =========================================
+   VERY SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+
+  .login-card {
+
+    padding: 25px 17px 20px;
+
+  }
+
+  .app-title {
+
+    font-size: 27px;
+
+  }
+
+  .welcome-section h2 {
+
+    font-size: 25px;
+
+  }
+
+  .social-button {
+
+    width: 50px;
+
+    height: 50px;
+
+  }
+
+}

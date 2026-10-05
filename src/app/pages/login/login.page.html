@@ -1,0 +1,171 @@
+<ion-content [fullscreen]="true">
+
+  <div class="login-background">
+
+    <!-- Decorative background shapes -->
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="shape shape-3"></div>
+
+    <div class="login-card">
+
+      <!-- Logo -->
+      <div class="logo-container">
+        <div class="logo-icon">
+          <ion-icon name="document-text-outline"></ion-icon>
+          <ion-icon name="lock-closed-outline" class="lock-icon"></ion-icon>
+        </div>
+      </div>
+
+      <!-- Application name -->
+      <h1 class="app-title">
+        <span>Document</span> Vault
+      </h1>
+
+      <p class="app-subtitle">
+        Your Documents&nbsp; • &nbsp;Your Security
+      </p>
+
+      <!-- Welcome -->
+      <div class="welcome-section">
+
+        <h2>Welcome Back</h2>
+
+        <p>
+          Login to your account to continue
+        </p>
+
+      </div>
+
+      <!-- Email -->
+      <div class="input-container">
+
+        <div class="input-icon">
+          <ion-icon name="mail-outline"></ion-icon>
+        </div>
+
+        <ion-input
+          type="email"
+          placeholder="Email address"
+          [(ngModel)]="email">
+        </ion-input>
+
+      </div>
+
+      <!-- Password -->
+      <div class="input-container">
+
+        <div class="input-icon">
+          <ion-icon name="lock-closed-outline"></ion-icon>
+        </div>
+
+        <ion-input
+          [type]="showPassword ? 'text' : 'password'"
+          placeholder="Password"
+          [(ngModel)]="password">
+        </ion-input>
+
+        <ion-button
+          fill="clear"
+          class="password-toggle"
+          (click)="togglePassword()">
+
+          <ion-icon
+            [name]="showPassword ? 'eye-off-outline' : 'eye-outline'">
+          </ion-icon>
+
+        </ion-button>
+
+      </div>
+
+      <!-- Remember / Forgot -->
+      <div class="options-row">
+
+        <div class="remember-section">
+
+          <ion-checkbox
+            [(ngModel)]="rememberMe">
+          </ion-checkbox>
+
+          <span>Remember me</span>
+
+        </div>
+
+        <button
+          type="button"
+          class="forgot-button"
+          (click)="forgotPassword()">
+
+          Forgot password?
+
+        </button>
+
+      </div>
+
+      <!-- Login -->
+      <ion-button
+        expand="block"
+        class="login-button"
+        (click)="login()">
+
+        <ion-icon
+          slot="start"
+          name="log-in-outline">
+        </ion-icon>
+
+        Login
+
+      </ion-button>
+
+      <!-- Social divider -->
+      <div class="social-section">
+
+        <div class="divider"></div>
+
+        <span>Or continue with</span>
+
+        <div class="divider"></div>
+
+      </div>
+
+      <!-- Social buttons -->
+      <div class="social-buttons">
+
+        <button class="social-button">
+          <span class="google-icon">G</span>
+        </button>
+
+        <button class="social-button">
+          <ion-icon name="logo-facebook"></ion-icon>
+        </button>
+
+        <button class="social-button">
+          <ion-icon name="logo-apple"></ion-icon>
+        </button>
+
+      </div>
+
+      <!-- Register -->
+      <div class="register-section">
+
+        <p>
+          Don't have an account?
+        </p>
+
+        <ion-button
+          fill="outline"
+          expand="block"
+          routerLink="/register"
+          class="register-button">
+
+          Register
+
+        </ion-button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</ion-content>

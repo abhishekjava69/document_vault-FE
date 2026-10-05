@@ -1,0 +1,76 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>My Documents</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <div class="documents-container">
+
+    <!-- Page Heading -->
+    <div class="page-heading">
+      <h1>My Documents</h1>
+      <p>View and manage your stored documents</p>
+    </div>
+
+
+    <!-- Search -->
+    <ion-searchbar
+      placeholder="Search documents"
+      [(ngModel)]="searchText"
+      (ionInput)="searchDocuments()">
+    </ion-searchbar>
+
+
+    <!-- Document List -->
+    <div
+      class="document-card"
+      *ngFor="let document of filteredDocuments">
+
+      <div class="document-icon">
+        <ion-icon name="document-text-outline"></ion-icon>
+      </div>
+
+
+      <div class="document-info">
+
+        <h2>
+          {{ document.name }}
+        </h2>
+
+        <p>
+          Category: {{ document.category }}
+        </p>
+
+        <p>
+          {{ document.fileType }} • {{ document.fileSize }}
+        </p>
+
+        <p class="date">
+          Uploaded: {{ document.uploadDate }}
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <!-- No Documents -->
+    <div
+      class="no-documents"
+      *ngIf="filteredDocuments.length === 0">
+
+      <ion-icon name="folder-open-outline"></ion-icon>
+
+      <h2>No Documents Found</h2>
+
+      <p>
+        You don't have any documents matching your search.
+      </p>
+
+    </div>
+
+  </div>
+
+</ion-content>

@@ -1,0 +1,130 @@
+.documents-container {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+
+.page-heading {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+
+.page-heading h1 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+
+.page-heading p {
+  color: #666;
+  margin-top: 0;
+}
+
+
+ion-searchbar {
+  margin-bottom: 20px;
+}
+
+
+/* Document Card */
+
+.document-card {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 15px;
+
+  padding: 18px;
+
+  margin-bottom: 15px;
+
+  border-radius: 12px;
+
+  background: #ffffff;
+
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+
+/* Document Icon */
+
+.document-icon {
+  min-width: 50px;
+  height: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+
+  background: #f0f0f0;
+}
+
+
+.document-icon ion-icon {
+  font-size: 28px;
+}
+
+
+/* Document Information */
+
+.document-info {
+  flex: 1;
+
+  overflow: hidden;
+}
+
+
+.document-info h2 {
+  margin: 0 0 8px;
+
+  font-size: 18px;
+
+  font-weight: 600;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+}
+
+
+.document-info p {
+  margin: 4px 0;
+
+  font-size: 14px;
+
+  color: #666;
+}
+
+
+.document-info .date {
+  font-size: 12px;
+
+  color: #999;
+}
+
+
+/* No Documents */
+
+.no-documents {
+  text-align: center;
+
+  margin-top: 70px;
+
+  color: #777;
+}
+
+
+.no-documents ion-icon {
+  font-size: 60px;
+}
+
+
+.no-documents h2 {
+  font-size: 20px;
+}

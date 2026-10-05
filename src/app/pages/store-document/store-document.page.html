@@ -1,0 +1,129 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Store Document</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <div class="document-container">
+
+    <div class="page-heading">
+      <h1>Store Document</h1>
+      <p>Securely store your document in Document Vault</p>
+    </div>
+
+    <!-- Document Name -->
+    <ion-item>
+      <ion-input
+        label="Document Name"
+        labelPlacement="floating"
+        type="text"
+        placeholder="Enter document name"
+        [(ngModel)]="documentName">
+      </ion-input>
+    </ion-item>
+
+    <!-- Category -->
+    <ion-item>
+      <ion-select
+        label="Category"
+        labelPlacement="floating"
+        placeholder="Select category"
+        [(ngModel)]="category">
+
+        <ion-select-option value="personal">
+          Personal
+        </ion-select-option>
+
+        <ion-select-option value="education">
+          Education
+        </ion-select-option>
+
+        <ion-select-option value="employment">
+          Employment
+        </ion-select-option>
+
+        <ion-select-option value="financial">
+          Financial
+        </ion-select-option>
+
+        <ion-select-option value="medical">
+          Medical
+        </ion-select-option>
+
+        <ion-select-option value="other">
+          Other
+        </ion-select-option>
+
+      </ion-select>
+    </ion-item>
+
+    <!-- Description -->
+    <ion-item>
+      <ion-textarea
+        label="Description"
+        labelPlacement="floating"
+        placeholder="Enter document description"
+        [autoGrow]="true"
+        [(ngModel)]="description">
+      </ion-textarea>
+    </ion-item>
+
+    <!-- File Selection -->
+    <div class="file-section">
+
+      <h3>Select Document</h3>
+
+      <input
+        type="file"
+        #fileInput
+        hidden
+        (change)="onFileSelected($event)"
+        accept=".pdf,.doc,.docx,.jpg,.jpeg,.png">
+
+      <ion-button
+        expand="block"
+        fill="outline"
+        (click)="fileInput.click()">
+
+        Select File
+
+      </ion-button>
+
+      <!-- Selected File -->
+      <div
+        class="selected-file"
+        *ngIf="selectedFile">
+
+        <ion-icon name="document-outline"></ion-icon>
+
+        <div class="file-info">
+
+          <strong>
+            {{ selectedFile.name }}
+          </strong>
+
+          <span>
+            {{ getFileSize(selectedFile.size) }}
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Store Button -->
+    <ion-button
+      expand="block"
+      class="store-button"
+      (click)="storeDocument()">
+
+      Store Document
+
+    </ion-button>
+
+  </div>
+
+</ion-content>

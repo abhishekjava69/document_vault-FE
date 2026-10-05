@@ -1,0 +1,75 @@
+.document-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.page-heading {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.page-heading h1 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.page-heading p {
+  color: #666;
+  margin-top: 0;
+}
+
+ion-item {
+  margin-bottom: 15px;
+  --border-radius: 10px;
+}
+
+.file-section {
+  margin-top: 25px;
+}
+
+.file-section h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.selected-file {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  margin-top: 15px;
+  padding: 15px;
+
+  border-radius: 10px;
+  background: #f4f4f4;
+}
+
+.selected-file ion-icon {
+  font-size: 32px;
+}
+
+.file-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  overflow: hidden;
+}
+
+.file-info strong {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.file-info span {
+  font-size: 13px;
+  color: #666;
+}
+
+.store-button {
+  margin-top: 30px;
+}

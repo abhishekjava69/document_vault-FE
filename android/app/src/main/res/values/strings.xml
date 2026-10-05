@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Document Vault</string>
+    <string name="title_activity_main">Document Vault</string>
+    <string name="package_name">com.abhishek.documentvault</string>
+    <string name="custom_url_scheme">com.abhishek.documentvault</string>
+</resources>
