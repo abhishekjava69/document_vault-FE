@@ -1,87 +1,104 @@
-<ion-header>
-  <ion-toolbar>
+<ion-content [fullscreen]="true" class="home-content">
 
-    <ion-title>
-      Document Vault
-    </ion-title>
+  <div class="home-container">
 
-    <ion-buttons slot="end">
+    <!-- Decorative background circles -->
+    <div class="circle circle-top"></div>
+    <div class="circle circle-bottom"></div>
+    <div class="circle circle-right"></div>
 
-      <ion-button>
-        <ion-icon name="person-circle-outline"></ion-icon>
-      </ion-button>
+    <!-- Header -->
+    <div class="header-section">
 
-    </ion-buttons>
+      <div class="app-logo">
+        <div class="logo-icon">
+          <ion-icon name="document-lock-outline"></ion-icon>
+        </div>
+      </div>
 
-  </ion-toolbar>
-</ion-header>
+      <h1>Document Vault</h1>
 
-
-<ion-content class="home-page">
-
-  <div class="welcome-section">
-
-    <h1>Welcome 👋</h1>
-
-    <p>
-      Manage your important documents securely.
-    </p>
-
-  </div>
-
-
-  <div class="option-card"
-       routerLink="/store-document">
-
-    <div class="option-icon upload-icon">
-
-      <ion-icon
-        name="cloud-upload-outline">
-      </ion-icon>
-
-    </div>
-
-    <div class="option-content">
-
-      <h2>Store Documents</h2>
-
-      <p>
-        Upload and organize your documents.
+      <p class="tagline">
+        Your Documents <span>•</span> Your Security
       </p>
 
     </div>
 
-    <ion-icon
-      name="chevron-forward-outline">
-    </ion-icon>
 
-  </div>
+    <!-- Welcome -->
+    <div class="welcome-section">
 
-
-  <div class="option-card"
-       routerLink="/documents">
-
-    <div class="option-icon folder-icon">
-
-      <ion-icon
-        name="folder-open-outline">
-      </ion-icon>
-
-    </div>
-
-    <div class="option-content">
-
-      <h2>See Documents</h2>
+      <h2>Welcome 👋</h2>
 
       <p>
-        View your documents category wise.
+        Manage your important<br />
+        documents securely.
       </p>
 
     </div>
 
-    <ion-icon
-      name="chevron-forward-outline">
-    </ion-icon>
+
+    <!-- Options -->
+    <div class="options-section">
+
+      <!-- Store Documents -->
+      <div
+        class="action-card"
+        (click)="openStoreDocuments()"
+      >
+
+        <div class="action-icon store-icon">
+          <ion-icon name="cloud-upload-outline"></ion-icon>
+        </div>
+
+        <div class="action-content">
+          <h3>Store Documents</h3>
+
+          <p>
+            Upload and organize your documents.
+          </p>
+        </div>
+
+        <ion-icon
+          class="arrow-icon"
+          name="chevron-forward-outline">
+        </ion-icon>
+
+      </div>
+
+
+      <!-- See Documents -->
+      <div
+        class="action-card"
+        (click)="openDocuments()"
+      >
+
+        <div class="action-icon folder-icon">
+          <ion-icon name="folder-open-outline"></ion-icon>
+        </div>
+
+        <div class="action-content">
+          <h3>See Documents</h3>
+
+          <p>
+            View your documents category wise.
+          </p>
+        </div>
+
+        <ion-icon
+          class="arrow-icon"
+          name="chevron-forward-outline">
+        </ion-icon>
+
+      </div>
+
+    </div>
+
+
+    <!-- Bottom -->
+    <div class="bottom-section">
+      <p>Keep your documents safe and secure 🔐</p>
+    </div>
 
   </div>
 

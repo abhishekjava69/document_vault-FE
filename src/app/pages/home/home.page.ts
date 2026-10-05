@@ -1,44 +1,37 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
-import {
-  IonButton,
-  IonButtons,
-  IonContent,
-  IonHeader,
-  IonIcon,
-  IonTitle,
-  IonToolbar
-} from '@ionic/angular';
+import { Router } from '@angular/router';
+import { IonContent, IonIcon } from '@ionic/angular';
 import { addIcons } from 'ionicons';
 import {
   chevronForwardOutline,
   cloudUploadOutline,
-  folderOpenOutline,
-  personCircleOutline
+  documentLockOutline,
+  folderOpenOutline
 } from 'ionicons/icons';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.page.html',
   styleUrls: ['./home.page.scss'],
-  imports: [
-    IonButton,
-    IonButtons,
-    IonContent,
-    IonHeader,
-    IonIcon,
-    IonTitle,
-    IonToolbar,
-    RouterLink
-  ],
+  imports: [IonContent, IonIcon],
 })
 export class HomePage {
-  constructor() {
+
+  constructor(private router: Router) {
     addIcons({
       chevronForwardOutline,
       cloudUploadOutline,
-      folderOpenOutline,
-      personCircleOutline
+      documentLockOutline,
+      folderOpenOutline
     });
   }
+
+  openStoreDocuments() {
+    this.router.navigate(['/store-document']);
+  }
+
+  openDocuments() {
+    this.router.navigate(['/documents']);
+  }
+
 }

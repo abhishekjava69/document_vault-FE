@@ -1,71 +1,364 @@
-.home-page {
-  --background: #f5f7fb;
+ion-content {
+  --background: transparent;
 }
 
-.welcome-section {
-  padding: 25px 20px 15px;
+.home-content {
+  --background: linear-gradient(
+    145deg,
+    #5420d6 0%,
+    #315de8 45%,
+    #ef159d 100%
+  );
 }
 
-.welcome-section h1 {
-  font-size: 28px;
-  margin-bottom: 5px;
+.home-container {
+  position: relative;
+  min-height: 100%;
+  padding:
+    calc(30px + env(safe-area-inset-top))
+    20px
+    calc(25px + env(safe-area-inset-bottom));
+
+  overflow: hidden;
 }
 
-.welcome-section p {
-  color: #777;
+
+/* ================================
+   Background Circles
+================================ */
+
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0.25;
 }
 
-.option-card {
-  margin: 15px 20px;
+.circle-top {
+  width: 180px;
+  height: 180px;
+  background: #e83db6;
+  top: -70px;
+  right: -70px;
+}
 
-  padding: 20px;
+.circle-bottom {
+  width: 170px;
+  height: 170px;
+  background: #d532b8;
+  bottom: -70px;
+  left: -80px;
+}
 
-  background: white;
+.circle-right {
+  width: 65px;
+  height: 65px;
+  background: #b83bd8;
+  right: -15px;
+  top: 48%;
+}
 
-  border-radius: 18px;
 
+/* ================================
+   Header
+================================ */
+
+.header-section {
+  position: relative;
+  z-index: 2;
+
+  text-align: center;
+
+  margin-top: 10px;
+}
+
+.app-logo {
   display: flex;
-  align-items: center;
-
-  gap: 15px;
-
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+  justify-content: center;
+  margin-bottom: 12px;
 }
 
-.option-icon {
-  width: 55px;
-  height: 55px;
+.logo-icon {
+  width: 70px;
+  height: 70px;
 
-  border-radius: 15px;
+  border-radius: 20px;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  font-size: 30px;
+  background: linear-gradient(
+    135deg,
+    #394eff,
+    #b51fe8
+  );
+
+  box-shadow:
+    0 12px 25px rgba(0, 0, 0, 0.20);
 }
 
-.upload-icon {
-  background: #e8f0ff;
-  color: #3880ff;
+.logo-icon ion-icon {
+  font-size: 42px;
+  color: white;
 }
+
+
+.header-section h1 {
+  margin: 0;
+
+  font-size: 28px;
+  font-weight: 800;
+
+  color: white;
+
+  letter-spacing: -0.5px;
+}
+
+
+.tagline {
+  margin: 5px 0 0;
+
+  font-size: 12px;
+
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.tagline span {
+  margin: 0 5px;
+}
+
+
+/* ================================
+   Welcome
+================================ */
+
+.welcome-section {
+  position: relative;
+  z-index: 2;
+
+  margin-top: 35px;
+  margin-bottom: 22px;
+}
+
+.welcome-section h2 {
+  margin: 0;
+
+  color: white;
+
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.welcome-section p {
+  margin: 7px 0 0;
+
+  color: rgba(255, 255, 255, 0.85);
+
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+
+/* ================================
+   Action Cards
+================================ */
+
+.options-section {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 16px;
+}
+
+
+.action-card {
+  width: 100%;
+  min-height: 92px;
+
+  padding: 15px;
+
+  display: flex;
+  align-items: center;
+
+  background: rgba(255, 255, 255, 0.97);
+
+  border-radius: 20px;
+
+  box-shadow:
+    0 12px 30px rgba(30, 20, 90, 0.20);
+
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+
+  cursor: pointer;
+}
+
+
+.action-card:active {
+  transform: scale(0.97);
+
+  box-shadow:
+    0 6px 15px rgba(30, 20, 90, 0.20);
+}
+
+
+/* Icons */
+
+.action-icon {
+  width: 58px;
+  height: 58px;
+
+  flex-shrink: 0;
+
+  border-radius: 17px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.action-icon ion-icon {
+  font-size: 31px;
+}
+
+
+.store-icon {
+  background: #e9efff;
+}
+
+.store-icon ion-icon {
+  color: #3972ff;
+}
+
 
 .folder-icon {
-  background: #fff4df;
-  color: #f39c12;
+  background: #fff1d9;
 }
 
-.option-content {
+.folder-icon ion-icon {
+  color: #ff9e18;
+}
+
+
+/* Card text */
+
+.action-content {
   flex: 1;
+
+  margin-left: 14px;
 }
 
-.option-content h2 {
-  font-size: 18px;
-  margin: 0 0 5px;
-}
 
-.option-content p {
+.action-content h3 {
   margin: 0;
-  color: #777;
-  font-size: 14px;
+
+  font-size: 16px;
+  font-weight: 650;
+
+  color: #18203b;
+}
+
+
+.action-content p {
+  margin: 5px 0 0;
+
+  font-size: 12px;
+  line-height: 1.35;
+
+  color: #7c8190;
+}
+
+
+/* Arrow */
+
+.arrow-icon {
+  margin-left: 8px;
+
+  font-size: 20px;
+
+  color: #202020;
+}
+
+
+/* ================================
+   Bottom text
+================================ */
+
+.bottom-section {
+  position: relative;
+  z-index: 2;
+
+  text-align: center;
+
+  margin-top: 35px;
+}
+
+.bottom-section p {
+  margin: 0;
+
+  font-size: 11px;
+
+  color: rgba(255, 255, 255, 0.75);
+}
+
+
+/* ================================
+   Small Android Screens
+================================ */
+
+@media (max-height: 680px) {
+
+  .home-container {
+    padding-top: 20px;
+  }
+
+  .logo-icon {
+    width: 58px;
+    height: 58px;
+  }
+
+  .logo-icon ion-icon {
+    font-size: 34px;
+  }
+
+  .header-section h1 {
+    font-size: 24px;
+  }
+
+  .welcome-section {
+    margin-top: 25px;
+  }
+
+  .action-card {
+    min-height: 82px;
+  }
+
+  .action-icon {
+    width: 52px;
+    height: 52px;
+  }
+
+  .bottom-section {
+    margin-top: 22px;
+  }
+}
+
+
+/* ================================
+   Larger Android Screens
+================================ */
+
+@media (min-width: 600px) {
+
+  .home-container {
+    max-width: 520px;
+    margin: auto;
+  }
+
 }
