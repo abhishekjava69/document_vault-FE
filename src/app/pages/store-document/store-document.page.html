@@ -1,128 +1,335 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Store Document</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content [fullscreen]="true">
 
-<ion-content class="ion-padding">
+  <div class="login-background">
 
-  <div class="document-container">
+    <!-- Background shapes -->
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="shape shape-3"></div>
 
-    <div class="page-heading">
-      <h1>Store Document</h1>
-      <p>Securely store your document in Document Vault</p>
-    </div>
 
-    <!-- Document Name -->
-    <ion-item>
-      <ion-input
-        label="Document Name"
-        labelPlacement="floating"
-        type="text"
-        placeholder="Enter document name"
-        [(ngModel)]="documentName">
-      </ion-input>
-    </ion-item>
+    <!-- MAIN CARD -->
+    <div class="store-card">
 
-    <!-- Category -->
-    <ion-item>
-      <ion-select
-        label="Category"
-        labelPlacement="floating"
-        placeholder="Select category"
-        [(ngModel)]="category">
 
-        <ion-select-option value="personal">
-          Personal
-        </ion-select-option>
+      <!-- =====================================
+           TOP HEADER
+      ====================================== -->
 
-        <ion-select-option value="education">
-          Education
-        </ion-select-option>
+      <div class="top-header">
 
-        <ion-select-option value="employment">
-          Employment
-        </ion-select-option>
+        <button
+          type="button"
+          class="back-button"
+          routerLink="/home">
 
-        <ion-select-option value="financial">
-          Financial
-        </ion-select-option>
+          <ion-icon name="chevron-back-outline"></ion-icon>
 
-        <ion-select-option value="medical">
-          Medical
-        </ion-select-option>
+        </button>
 
-        <ion-select-option value="other">
-          Other
-        </ion-select-option>
+        <h1>Store Document</h1>
 
-      </ion-select>
-    </ion-item>
+      </div>
 
-    <!-- Description -->
-    <ion-item>
-      <ion-textarea
-        label="Description"
-        labelPlacement="floating"
-        placeholder="Enter document description"
-        [autoGrow]="true"
-        [(ngModel)]="description">
-      </ion-textarea>
-    </ion-item>
 
-    <!-- File Selection -->
-    <div class="file-section">
+      <!-- =====================================
+           LOGO / HEADING
+      ====================================== -->
 
-      <h3>Select Document</h3>
+      <div class="page-heading">
 
-      <input
-        type="file"
-        #fileInput
-        hidden
-        (change)="onFileSelected($event)"
-        accept=".pdf,.doc,.docx,.jpg,.jpeg,.png">
+        <div class="document-logo">
 
-      <ion-button
-        expand="block"
-        fill="outline"
-        (click)="fileInput.click()">
+          <ion-icon
+            class="main-logo-icon"
+            name="document-text-outline">
+          </ion-icon>
 
-        Select File
+          <span class="plus-circle">
 
-      </ion-button>
+            <ion-icon name="add-outline"></ion-icon>
 
-      <!-- Selected File -->
-      <div
-        class="selected-file"
-        *ngIf="selectedFile">
-
-        <ion-icon name="document-outline"></ion-icon>
-
-        <div class="file-info">
-
-          <strong>
-            {{ selectedFile.name }}
-          </strong>
-
-          <span>
-            {{ getFileSize(selectedFile.size) }}
           </span>
+
+        </div>
+
+
+        <h2>Store Document</h2>
+
+        <p>
+          Securely store your document in Document Vault
+        </p>
+
+      </div>
+
+
+      <!-- =====================================
+           DOCUMENT NAME
+      ====================================== -->
+
+      <div class="input-container">
+
+        <div class="input-icon blue-icon">
+
+          <ion-icon
+            name="document-outline">
+          </ion-icon>
+
+        </div>
+
+
+        <div class="input-content">
+
+          <label>
+            Document Name
+          </label>
+
+          <ion-input
+            type="text"
+            placeholder="Enter document name"
+            [(ngModel)]="documentName">
+          </ion-input>
 
         </div>
 
       </div>
 
+
+      <!-- =====================================
+           CATEGORY
+      ====================================== -->
+
+      <div class="input-container category-container">
+
+
+        <!-- CATEGORY ICON
+             INLINE SVG SO IT ALWAYS SHOWS -->
+
+        <div class="input-icon purple-icon">
+
+          <svg
+            class="category-svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+
+            <rect
+              x="3"
+              y="3"
+              width="7"
+              height="7"
+              rx="1.5"
+              stroke="currentColor"
+              stroke-width="1.8"/>
+
+            <rect
+              x="14"
+              y="3"
+              width="7"
+              height="7"
+              rx="1.5"
+              stroke="currentColor"
+              stroke-width="1.8"/>
+
+            <rect
+              x="3"
+              y="14"
+              width="7"
+              height="7"
+              rx="1.5"
+              stroke="currentColor"
+              stroke-width="1.8"/>
+
+            <rect
+              x="14"
+              y="14"
+              width="7"
+              height="7"
+              rx="1.5"
+              stroke="currentColor"
+              stroke-width="1.8"/>
+
+          </svg>
+
+        </div>
+
+
+        <!-- CATEGORY CONTENT -->
+
+        <div class="input-content">
+
+          <label>
+            Category
+          </label>
+
+
+          <ion-select
+            interface="popover"
+            toggleIcon="chevron-down-outline"
+            expandedIcon="chevron-up-outline"
+            placeholder="Select document category"
+            [(ngModel)]="category">
+
+            <ion-select-option value="personal">
+              Personal
+            </ion-select-option>
+
+            <ion-select-option value="education">
+              Education
+            </ion-select-option>
+
+            <ion-select-option value="employment">
+              Employment
+            </ion-select-option>
+
+            <ion-select-option value="financial">
+              Financial
+            </ion-select-option>
+
+            <ion-select-option value="medical">
+              Medical
+            </ion-select-option>
+
+            <ion-select-option value="other">
+              Other
+            </ion-select-option>
+
+          </ion-select>
+
+        </div>
+
+
+        <ion-icon
+          class="arrow-icon"
+          name="chevron-forward-outline">
+        </ion-icon>
+
+      </div>
+
+
+      <!-- =====================================
+           DESCRIPTION
+           SAME HEIGHT AS OTHER INPUTS
+      ====================================== -->
+
+      <div class="input-container description-container">
+
+
+        <div class="input-icon yellow-icon">
+
+          <ion-icon
+            name="document-text-outline">
+          </ion-icon>
+
+        </div>
+
+
+        <div class="input-content">
+
+          <label>
+            Description
+          </label>
+
+          <ion-input
+            type="text"
+            placeholder="Enter brief description"
+            [(ngModel)]="description">
+          </ion-input>
+
+        </div>
+
+      </div>
+
+
+      <!-- =====================================
+           SELECT DOCUMENT
+      ====================================== -->
+
+      <div class="file-section">
+
+        <h3>
+          Select Document
+        </h3>
+
+
+        <input
+          type="file"
+          #fileInput
+          hidden
+          (change)="onFileSelected($event)"
+          accept=".pdf,.doc,.docx,.jpg,.jpeg,.png">
+
+
+        <div
+          class="file-picker"
+          (click)="fileInput.click()">
+
+          <div class="file-icon">
+
+            <ion-icon
+              name="cloud-upload-outline">
+            </ion-icon>
+
+          </div>
+
+
+          <div class="file-text">
+
+            <strong>
+              SELECT FILE
+            </strong>
+
+            <span>
+              Choose a file from your device
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- Selected File -->
+
+        <div
+          class="selected-file"
+          *ngIf="selectedFile">
+
+          <ion-icon
+            name="document-outline">
+          </ion-icon>
+
+          <div class="selected-file-info">
+
+            <strong>
+              {{ selectedFile.name }}
+            </strong>
+
+            <span>
+              {{ getFileSize(selectedFile.size) }}
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- =====================================
+           STORE BUTTON
+      ====================================== -->
+
+      <ion-button
+        expand="block"
+        class="store-button"
+        (click)="storeDocument()">
+
+        STORE DOCUMENT
+
+      </ion-button>
+
+
     </div>
-
-    <!-- Store Button -->
-    <ion-button
-      expand="block"
-      class="store-button"
-      (click)="storeDocument()">
-
-      Store Document
-
-    </ion-button>
 
   </div>
 

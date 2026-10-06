@@ -1,84 +1,234 @@
 <ion-content [fullscreen]="true">
 
-  <div class="register-container">
+  <div class="login-background">
 
-    <div class="header-section">
+    <!-- Decorative background shapes -->
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="shape shape-3"></div>
 
-      <div class="logo-circle">
-        <ion-icon name="person-add-outline"></ion-icon>
+
+    <!-- Main Card -->
+    <div class="login-card">
+
+      <!-- ================================
+           LOGO
+      ================================= -->
+
+      <div class="logo-container">
+
+        <div class="logo-icon">
+
+          <ion-icon
+            name="document-text-outline">
+          </ion-icon>
+
+          <ion-icon
+            class="lock-icon"
+            name="lock-closed-outline">
+          </ion-icon>
+
+        </div>
+
       </div>
 
-      <h1>Create Account</h1>
 
-      <p>
-        Create your Document Vault account
+      <!-- ================================
+           APP TITLE
+      ================================= -->
+
+      <h1 class="app-title">
+        Document Vault
+      </h1>
+
+      <p class="app-subtitle">
+        Your Documents&nbsp; • &nbsp;Your Security
       </p>
 
-    </div>
 
-    <div class="register-card">
+      <!-- ================================
+           CREATE ACCOUNT TITLE
+      ================================= -->
 
-      <ion-item>
-        <ion-input
-          label="Full Name"
-          labelPlacement="floating"
-          placeholder="Enter your name">
-        </ion-input>
-      </ion-item>
+      <div class="welcome-section">
 
-      <ion-item>
-        <ion-input
-          label="Email"
-          labelPlacement="floating"
-          type="email"
-          placeholder="Enter email">
-        </ion-input>
-      </ion-item>
+        <h2>
+          Create Account
+        </h2>
 
-      <ion-item>
-        <ion-input
-          label="Mobile Number"
-          labelPlacement="floating"
-          type="tel"
-          placeholder="Enter mobile number">
-        </ion-input>
-      </ion-item>
+        <p>
+          Create your Document Vault account
+        </p>
 
-      <ion-item>
-        <ion-input
-          label="Password"
-          labelPlacement="floating"
-          type="password"
-          placeholder="Create password">
-        </ion-input>
-      </ion-item>
+      </div>
 
-      <ion-item>
-        <ion-input
-          label="Confirm Password"
-          labelPlacement="floating"
-          type="password"
-          placeholder="Confirm password">
-        </ion-input>
-      </ion-item>
 
-      <ion-button
-        expand="block"
-        class="register-button"
-        routerLink="/login">
+      <!-- ================================
+           REGISTER FORM
+      ================================= -->
 
-        CREATE ACCOUNT
+      <div class="register-form">
 
-      </ion-button>
 
-      <ion-button
-        expand="block"
-        fill="clear"
-        routerLink="/login">
+        <!-- Full Name -->
+        <div class="input-container">
 
-        Already have an account? Login
+          <div class="input-icon">
 
-      </ion-button>
+            <ion-icon
+              name="person-outline">
+            </ion-icon>
+
+          </div>
+
+          <ion-input
+            type="text"
+            placeholder="Full Name">
+          </ion-input>
+
+        </div>
+
+
+        <!-- Email -->
+        <div class="input-container">
+
+          <div class="input-icon">
+
+            <ion-icon
+              name="mail-outline">
+            </ion-icon>
+
+          </div>
+
+          <ion-input
+            type="email"
+            placeholder="Email">
+          </ion-input>
+
+        </div>
+
+
+        <!-- Mobile Number -->
+        <div class="input-container">
+
+          <div class="input-icon">
+
+            <ion-icon
+              name="phone-portrait-outline">
+            </ion-icon>
+
+          </div>
+
+          <ion-input
+            type="tel"
+            placeholder="Mobile Number">
+          </ion-input>
+
+        </div>
+
+
+        <!-- Password -->
+        <div class="input-container">
+
+          <div class="input-icon">
+
+            <ion-icon
+              name="lock-closed-outline">
+            </ion-icon>
+
+          </div>
+
+          <ion-input
+            type="password"
+            placeholder="Password">
+          </ion-input>
+
+          <ion-button
+            fill="clear"
+            class="password-toggle">
+
+            <ion-icon
+              slot="icon-only"
+              name="eye-outline">
+            </ion-icon>
+
+          </ion-button>
+
+        </div>
+
+
+        <!-- Confirm Password -->
+        <div class="input-container">
+
+          <div class="input-icon">
+
+            <ion-icon
+              name="shield-checkmark-outline">
+            </ion-icon>
+
+          </div>
+
+          <ion-input
+            type="password"
+            placeholder="Confirm Password">
+          </ion-input>
+
+          <ion-button
+            fill="clear"
+            class="password-toggle">
+
+            <ion-icon
+              slot="icon-only"
+              name="eye-outline">
+            </ion-icon>
+
+          </ion-button>
+
+        </div>
+
+
+        <!-- ================================
+             CREATE ACCOUNT BUTTON
+        ================================= -->
+
+        <ion-button
+          expand="block"
+          class="login-button"
+          routerLink="/login">
+
+          <ion-icon
+            slot="start"
+            name="person-add-outline">
+          </ion-icon>
+
+          CREATE ACCOUNT
+
+        </ion-button>
+
+
+        <!-- ================================
+             LOGIN LINK
+        ================================= -->
+
+        <div class="register-section">
+
+          <span>
+            ALREADY HAVE AN ACCOUNT?
+          </span>
+
+          <button
+            type="button"
+            class="login-link"
+            routerLink="/login">
+
+            LOGIN
+
+          </button>
+
+        </div>
+
+
+      </div>
 
     </div>
 

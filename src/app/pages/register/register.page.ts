@@ -1,39 +1,33 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import {
-  IonButton,
-  IonContent,
-  IonIcon,
-  IonInput,
-  IonItem
-} from '@ionic/angular';
+import { IonButton, IonContent, IonIcon, IonInput } from '@ionic/angular';
 import { addIcons } from 'ionicons';
-import { personAddOutline } from 'ionicons/icons';
+import {
+  documentTextOutline,
+  lockClosedOutline,
+  mailOutline,
+  personAddOutline,
+  personOutline,
+  phonePortraitOutline,
+  shieldCheckmarkOutline
+} from 'ionicons/icons';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.page.html',
   styleUrls: ['./register.page.scss'],
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonButton,
-    IonContent,
-    IonIcon,
-    IonInput,
-    IonItem,
-    RouterLink
-  ]
+  imports: [IonContent, IonIcon, IonInput, IonButton, RouterLink]
 })
-export class RegisterPage implements OnInit {
-
+export class RegisterPage {
   constructor() {
-    addIcons({ personAddOutline });
+    addIcons({
+      'person-outline': personOutline,
+      'mail-outline': mailOutline,
+      'phone-portrait-outline': phonePortraitOutline,
+      'lock-closed-outline': lockClosedOutline,
+      'shield-checkmark-outline': shieldCheckmarkOutline,
+      'person-add-outline': personAddOutline,
+      'document-text-outline': documentTextOutline
+    });
   }
-
-  ngOnInit() {
-  }
-
 }

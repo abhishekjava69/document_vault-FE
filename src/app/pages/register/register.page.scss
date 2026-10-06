@@ -1,0 +1,788 @@
+/* =========================================
+   ION CONTENT
+========================================= */
+
+ion-content {
+  --background: transparent;
+
+  --padding-top: 0;
+  --padding-bottom: 0;
+  --padding-start: 0;
+  --padding-end: 0;
+}
+
+
+/* =========================================
+   BACKGROUND
+========================================= */
+
+.login-background {
+
+  position: relative;
+
+  width: 100%;
+  min-height: 100%;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  box-sizing: border-box;
+
+  padding: 18px 14px;
+
+  overflow: hidden;
+
+  background: linear-gradient(
+    145deg,
+    #3d00ff 0%,
+    #6735f5 35%,
+    #d900c8 75%,
+    #ff00a8 100%
+  );
+}
+
+
+/* =========================================
+   DECORATIVE SHAPES
+========================================= */
+
+.shape {
+
+  position: absolute;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+
+/* Top right */
+
+.shape-1 {
+
+  width: 230px;
+  height: 230px;
+
+  top: -100px;
+  right: -80px;
+
+  background: rgba(
+    255,
+    255,
+    255,
+    0.08
+  );
+}
+
+
+/* Bottom left */
+
+.shape-2 {
+
+  width: 300px;
+  height: 300px;
+
+  bottom: -160px;
+  left: -100px;
+
+  background: rgba(
+    255,
+    255,
+    255,
+    0.08
+  );
+}
+
+
+/* Right middle */
+
+.shape-3 {
+
+  width: 180px;
+  height: 180px;
+
+  top: 45%;
+  right: -100px;
+
+  background: rgba(
+    255,
+    255,
+    255,
+    0.05
+  );
+}
+
+
+/* =========================================
+   MAIN CARD
+========================================= */
+
+.login-card {
+
+  position: relative;
+
+  z-index: 2;
+
+  width: 100%;
+
+  max-width: 430px;
+
+  box-sizing: border-box;
+
+  padding: 30px 28px 26px;
+
+  border-radius: 34px;
+
+  background: rgba(
+    255,
+    255,
+    255,
+    0.96
+  );
+
+  box-shadow:
+    0 20px 50px
+    rgba(
+      30,
+      0,
+      100,
+      0.25
+    );
+
+  margin: 0 auto;
+}
+
+
+/* =========================================
+   LOGO
+========================================= */
+
+.logo-container {
+
+  display: flex;
+
+  justify-content: center;
+
+  margin-bottom: 10px;
+}
+
+
+.logo-icon {
+
+  position: relative;
+
+  width: 76px;
+  height: 76px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 24px;
+
+  background: linear-gradient(
+    135deg,
+    #365cff,
+    #a900ff
+  );
+
+  box-shadow:
+    0 10px 25px
+    rgba(
+      86,
+      60,
+      220,
+      0.25
+    );
+}
+
+
+/* Document icon */
+
+.logo-icon > ion-icon:first-child {
+
+  font-size: 46px;
+
+  color: white;
+}
+
+
+/* Lock icon */
+
+.lock-icon {
+
+  position: absolute;
+
+  right: 7px;
+  bottom: 7px;
+
+  font-size: 22px;
+
+  padding: 5px;
+
+  border-radius: 8px;
+
+  background: white;
+
+  color: #7335e8;
+}
+
+
+/* =========================================
+   APP TITLE
+========================================= */
+
+.app-title {
+
+  margin: 6px 0 3px;
+
+  text-align: center;
+
+  font-size: 30px;
+
+  line-height: 1.2;
+
+  font-weight: 700;
+
+  color: #6828d9;
+}
+
+
+.app-subtitle {
+
+  margin: 0;
+
+  text-align: center;
+
+  font-size: 14px;
+
+  color: #8990a5;
+}
+
+
+/* =========================================
+   CREATE ACCOUNT HEADING
+========================================= */
+
+.welcome-section {
+
+  text-align: center;
+
+  margin-top: 24px;
+
+  margin-bottom: 20px;
+}
+
+
+.welcome-section h2 {
+
+  margin: 0 0 6px;
+
+  font-size: 27px;
+
+  font-weight: 700;
+
+  color: #152b60;
+}
+
+
+.welcome-section p {
+
+  margin: 0;
+
+  font-size: 15px;
+
+  color: #8b91a5;
+}
+
+
+/* =========================================
+   INPUT CONTAINER
+========================================= */
+
+.input-container {
+
+  display: flex;
+
+  align-items: center;
+
+  width: 100%;
+
+  height: 58px;
+
+  margin-bottom: 14px;
+
+  padding: 0 12px;
+
+  box-sizing: border-box;
+
+  border-radius: 32px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 5px 18px
+    rgba(
+      50,
+      70,
+      130,
+      0.10
+    );
+}
+
+
+/* =========================================
+   INPUT ICON
+========================================= */
+
+.input-icon {
+
+  width: 42px;
+  height: 42px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  margin-right: 7px;
+
+  border-radius: 50%;
+
+  background: #f2f5ff;
+}
+
+
+.input-icon ion-icon {
+
+  font-size: 24px;
+
+  color: #6380bd;
+}
+
+
+/* =========================================
+   INPUT
+========================================= */
+
+.input-container ion-input {
+
+  --padding-start: 0;
+  --padding-end: 8px;
+
+  font-size: 16px;
+
+  color: #293452;
+
+  flex: 1;
+}
+
+
+/* =========================================
+   PASSWORD EYE
+========================================= */
+
+.password-toggle {
+
+  --background: transparent;
+
+  --background-hover: transparent;
+
+  --background-activated: transparent;
+
+  --box-shadow: none;
+
+  --color: #7182a9;
+
+  margin: 0;
+
+  padding: 0;
+
+  min-width: 42px;
+
+  height: 42px;
+}
+
+
+.password-toggle::part(native) {
+
+  padding: 0;
+
+  background: transparent;
+
+  box-shadow: none;
+}
+
+
+/* =========================================
+   CREATE ACCOUNT BUTTON
+========================================= */
+
+.login-button {
+
+  --background: linear-gradient(
+    90deg,
+    #216cff 0%,
+    #6535f5 50%,
+    #ed00b8 100%
+  );
+
+  --background-hover: linear-gradient(
+    90deg,
+    #216cff 0%,
+    #6535f5 50%,
+    #ed00b8 100%
+  );
+
+  --background-activated: linear-gradient(
+    90deg,
+    #216cff 0%,
+    #6535f5 50%,
+    #ed00b8 100%
+  );
+
+  --border-radius: 32px;
+
+  --box-shadow:
+    0 9px 20px
+    rgba(
+      92,
+      55,
+      220,
+      0.28
+    );
+
+  --color: white;
+
+  width: 100%;
+
+  height: 58px;
+
+  margin: 5px 0 0;
+
+  padding: 0;
+
+  font-size: 18px;
+
+  font-weight: 600;
+
+  text-transform: none;
+}
+
+
+.login-button::part(native) {
+
+  width: 100%;
+
+  height: 100%;
+
+  padding: 0 20px;
+
+  border-radius: 32px;
+
+  background: linear-gradient(
+    90deg,
+    #216cff 0%,
+    #6535f5 50%,
+    #ed00b8 100%
+  );
+
+  box-shadow:
+    0 9px 20px
+    rgba(
+      92,
+      55,
+      220,
+      0.28
+    );
+}
+
+
+/* =========================================
+   ALREADY HAVE ACCOUNT
+========================================= */
+
+.register-section {
+
+  width: 100%;
+
+  display: flex;
+
+  flex-direction: row;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 5px;
+
+  margin-top: 18px;
+
+  padding: 0;
+
+  white-space: nowrap;
+
+  line-height: 1;
+}
+
+
+/* Normal text */
+
+.register-section > span {
+
+  display: inline-block;
+
+  margin: 0;
+
+  padding: 0;
+
+  color: #858ca1;
+
+  font-size: 14px;
+
+  font-weight: 500;
+
+  line-height: 1;
+}
+
+
+/* =========================================
+   LOGIN LINK
+========================================= */
+
+.login-link {
+
+  display: inline-block;
+
+  margin: 0;
+
+  padding: 0;
+
+  border: none !important;
+
+  outline: none !important;
+
+  background: transparent !important;
+
+  color: #0066ff !important;
+
+  font-family: inherit;
+
+  font-size: 14px !important;
+
+  font-weight: 800 !important;
+
+  line-height: 1;
+
+  letter-spacing: 0.2px;
+
+  cursor: pointer;
+
+  white-space: nowrap;
+}
+
+
+/* Hover */
+
+.login-link:hover {
+
+  color: #004dcc !important;
+
+  text-decoration: underline;
+}
+
+
+/* Press */
+
+.login-link:active {
+
+  color: #003c99 !important;
+
+  transform: scale(0.96);
+}
+
+
+/* =========================================
+   SMALL HEIGHT DEVICES
+========================================= */
+
+@media (max-height: 750px) {
+
+  .login-background {
+
+    align-items: flex-start;
+
+    padding-top: 12px;
+
+    padding-bottom: 12px;
+  }
+
+
+  .login-card {
+
+    padding: 22px 22px 20px;
+
+    border-radius: 30px;
+  }
+
+
+  .logo-icon {
+
+    width: 64px;
+
+    height: 64px;
+  }
+
+
+  .logo-icon > ion-icon:first-child {
+
+    font-size: 40px;
+  }
+
+
+  .app-title {
+
+    font-size: 27px;
+  }
+
+
+  .welcome-section {
+
+    margin-top: 18px;
+
+    margin-bottom: 16px;
+  }
+
+
+  .welcome-section h2 {
+
+    font-size: 24px;
+  }
+
+
+  .input-container {
+
+    height: 54px;
+
+    margin-bottom: 11px;
+  }
+
+
+  .login-button {
+
+    height: 54px;
+  }
+
+
+  .register-section {
+
+    margin-top: 16px;
+  }
+
+}
+
+
+/* =========================================
+   VERY SMALL DEVICES
+========================================= */
+
+@media (max-height: 680px) {
+
+  .login-background {
+
+    padding: 8px 10px;
+  }
+
+
+  .login-card {
+
+    padding: 18px 18px 16px;
+  }
+
+
+  .logo-container {
+
+    margin-bottom: 5px;
+  }
+
+
+  .logo-icon {
+
+    width: 58px;
+
+    height: 58px;
+  }
+
+
+  .logo-icon > ion-icon:first-child {
+
+    font-size: 36px;
+  }
+
+
+  .app-title {
+
+    font-size: 25px;
+  }
+
+
+  .app-subtitle {
+
+    font-size: 12px;
+  }
+
+
+  .welcome-section {
+
+    margin-top: 14px;
+
+    margin-bottom: 12px;
+  }
+
+
+  .welcome-section h2 {
+
+    font-size: 22px;
+  }
+
+
+  .welcome-section p {
+
+    font-size: 13px;
+  }
+
+
+  .input-container {
+
+    height: 50px;
+
+    margin-bottom: 9px;
+  }
+
+
+  .login-button {
+
+    height: 50px;
+  }
+
+
+  .register-section {
+
+    margin-top: 14px;
+
+    gap: 4px;
+  }
+
+
+  .register-section > span,
+  .login-link {
+
+    font-size: 13px !important;
+  }
+
+}

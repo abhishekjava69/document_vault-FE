@@ -1,73 +1,255 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>My Documents</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content [fullscreen]="true">
 
-<ion-content class="ion-padding">
+  <div class="page-background">
 
-  <div class="documents-container">
-
-    <!-- Page Heading -->
-    <div class="page-heading">
-      <h1>My Documents</h1>
-      <p>View and manage your stored documents</p>
-    </div>
+    <!-- Background decoration -->
+    <div class="background-circle circle-top"></div>
+    <div class="background-circle circle-bottom"></div>
 
 
-    <!-- Search -->
-    <ion-searchbar
-      placeholder="Search documents"
-      [(ngModel)]="searchText"
-      (ionInput)="searchDocuments()">
-    </ion-searchbar>
+    <!-- ================================
+         MAIN WHITE CARD
+    ================================= -->
+
+    <div class="documents-card">
 
 
-    <!-- Document List -->
-    <div
-      class="document-card"
-      *ngFor="let document of filteredDocuments">
+      <!-- ================================
+           TOP HEADER
+      ================================= -->
 
-      <div class="document-icon">
-        <ion-icon name="document-text-outline"></ion-icon>
+      <div class="top-header">
+
+        <button
+          type="button"
+          class="back-button"
+          routerLink="/home">
+
+          <ion-icon name="chevron-back-outline"></ion-icon>
+
+        </button>
+
+        <h1>My Documents</h1>
+
       </div>
 
 
-      <div class="document-info">
+      <!-- ================================
+           LOGO + PAGE TITLE
+      ================================= -->
+
+      <div class="page-heading">
+
+        <!-- Folder logo -->
+
+        <div class="folder-logo">
+
+          <svg
+            viewBox="0 0 64 64"
+            class="folder-svg">
+
+            <path
+              d="M7 18
+                 C7 14 10 11 14 11
+                 H27
+                 L34 18
+                 H50
+                 C54 18 57 21 57 25
+                 V48
+                 C57 52 54 55 50 55
+                 H14
+                 C10 55 7 52 7 48
+                 Z"
+              fill="none"
+              stroke="white"
+              stroke-width="4"
+              stroke-linejoin="round"/>
+
+            <path
+              d="M8 25 H56"
+              fill="none"
+              stroke="white"
+              stroke-width="4"
+              stroke-linecap="round"/>
+
+          </svg>
+
+        </div>
+
 
         <h2>
-          {{ document.name }}
+          My Documents
         </h2>
 
         <p>
-          Category: {{ document.category }}
-        </p>
-
-        <p>
-          {{ document.fileType }} • {{ document.fileSize }}
-        </p>
-
-        <p class="date">
-          Uploaded: {{ document.uploadDate }}
+          View and manage your stored documents
         </p>
 
       </div>
 
-    </div>
+
+      <!-- ================================
+           SEARCH
+      ================================= -->
+
+      <div class="search-box">
+
+        <ion-icon
+          name="search-outline"
+          class="search-icon">
+        </ion-icon>
+
+        <ion-input
+          type="search"
+          placeholder="Search documents"
+          [(ngModel)]="searchTerm"
+          (ionInput)="searchDocuments()">
+        </ion-input>
+
+      </div>
 
 
-    <!-- No Documents -->
-    <div
-      class="no-documents"
-      *ngIf="filteredDocuments.length === 0">
+      <!-- ================================
+           DOCUMENT LIST
+      ================================= -->
 
-      <ion-icon name="folder-open-outline"></ion-icon>
+      <div
+        class="documents-list"
+        *ngIf="filteredDocuments?.length > 0">
 
-      <h2>No Documents Found</h2>
+        <div
+          class="document-item"
+          *ngFor="let document of filteredDocuments">
 
-      <p>
-        You don't have any documents matching your search.
-      </p>
+          <!-- Document icon -->
+
+          <div class="document-icon">
+
+            <ion-icon
+              name="document-text-outline">
+            </ion-icon>
+
+          </div>
+
+
+          <!-- Document information -->
+
+          <div class="document-info">
+
+            <h3>
+              {{ document.name }}
+            </h3>
+
+            <p>
+              {{ document.category }}
+            </p>
+
+            <span>
+              {{ document.description }}
+            </span>
+
+          </div>
+
+
+          <!-- Arrow -->
+
+          <ion-icon
+            name="chevron-forward-outline"
+            class="document-arrow">
+          </ion-icon>
+
+        </div>
+
+      </div>
+
+
+      <!-- ================================
+           EMPTY STATE
+      ================================= -->
+
+      <div
+        class="empty-state"
+        *ngIf="!filteredDocuments?.length">
+
+
+        <!-- Large empty folder -->
+
+        <div class="empty-folder">
+
+          <svg
+            viewBox="0 0 120 120"
+            class="empty-folder-svg">
+
+            <!-- Folder -->
+
+            <path
+              d="M20 45
+                 C20 38 24 34 31 34
+                 H48
+                 L57 43
+                 H89
+                 C96 43 100 48 100 55
+                 V83
+                 C100 90 96 94 89 94
+                 H31
+                 C24 94 20 90 20 83
+                 Z"
+              fill="none"
+              stroke="#3965E8"
+              stroke-width="6"
+              stroke-linejoin="round"/>
+
+
+            <!-- Folder upper line -->
+
+            <path
+              d="M21 56 H99"
+              fill="none"
+              stroke="#3965E8"
+              stroke-width="6"
+              stroke-linecap="round"/>
+
+
+            <!-- Rays -->
+
+            <path
+              d="M60 15 V26"
+              stroke="#3965E8"
+              stroke-width="6"
+              stroke-linecap="round"/>
+
+            <path
+              d="M35 23 L43 32"
+              stroke="#3965E8"
+              stroke-width="6"
+              stroke-linecap="round"/>
+
+            <path
+              d="M85 23 L77 32"
+              stroke="#3965E8"
+              stroke-width="6"
+              stroke-linecap="round"/>
+
+          </svg>
+
+        </div>
+
+
+        <!-- Empty heading -->
+
+        <h2>
+          No Documents Found
+        </h2>
+
+
+        <!-- Empty description -->
+
+        <p>
+          You don't have any documents matching your search.
+        </p>
+
+      </div>
+
 
     </div>
 

@@ -1,23 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import {
-  IonContent,
-  IonHeader,
-  IonIcon,
-  IonSearchbar,
-  IonTitle,
-  IonToolbar
-} from '@ionic/angular';
+import { RouterLink } from '@angular/router';
+import { IonContent, IonIcon, IonInput } from '@ionic/angular';
 import { addIcons } from 'ionicons';
-import { documentTextOutline, folderOpenOutline } from 'ionicons/icons';
+import {
+  chevronBackOutline,
+  chevronForwardOutline,
+  documentTextOutline,
+  searchOutline
+} from 'ionicons/icons';
 
 interface DocumentItem {
   name: string;
   category: string;
-  fileType: string;
-  fileSize: string;
-  uploadDate: string;
+  description: string;
 }
 
 @Component({
@@ -28,21 +25,24 @@ interface DocumentItem {
     CommonModule,
     FormsModule,
     IonContent,
-    IonHeader,
     IonIcon,
-    IonSearchbar,
-    IonTitle,
-    IonToolbar
+    IonInput,
+    RouterLink
   ]
 })
 export class DocumentsPage implements OnInit {
 
-  searchText = '';
+  searchTerm = '';
   documents: DocumentItem[] = [];
   filteredDocuments: DocumentItem[] = [];
 
   constructor() {
-    addIcons({ documentTextOutline, folderOpenOutline });
+    addIcons({
+      chevronBackOutline,
+      chevronForwardOutline,
+      documentTextOutline,
+      searchOutline
+    });
   }
 
   ngOnInit() {
@@ -50,10 +50,10 @@ export class DocumentsPage implements OnInit {
   }
 
   searchDocuments(): void {
-    const query = this.searchText.trim().toLowerCase();
+    const query = this.searchTerm.trim().toLowerCase();
 
     this.filteredDocuments = this.documents.filter((document) =>
-      [document.name, document.category, document.fileType]
+      [document.name, document.category, document.description]
         .some((value) => value.toLowerCase().includes(query))
     );
   }

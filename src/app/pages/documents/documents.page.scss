@@ -1,130 +1,827 @@
-.documents-container {
-  max-width: 700px;
-  margin: 0 auto;
+/* =====================================================
+   ION CONTENT
+===================================================== */
+
+ion-content {
+  --background: transparent;
+
+  --padding-top: 0;
+  --padding-bottom: 0;
+  --padding-start: 0;
+  --padding-end: 0;
 }
 
+
+/* =====================================================
+   MAIN PAGE BACKGROUND
+   SAME STYLE AS LOGIN / REGISTER
+===================================================== */
+
+.page-background {
+
+  position: relative;
+
+  width: 100%;
+  min-height: 100%;
+
+  box-sizing: border-box;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 18px;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  background: linear-gradient(
+    145deg,
+    #4315ff 0%,
+    #6327f2 35%,
+    #a921dc 68%,
+    #ed00b8 100%
+  );
+}
+
+
+/* =====================================================
+   BACKGROUND DECORATIVE CIRCLES
+===================================================== */
+
+.background-circle {
+
+  position: absolute;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  z-index: 0;
+}
+
+
+.circle-top {
+
+  width: 280px;
+  height: 280px;
+
+  top: -145px;
+  right: -110px;
+
+  background: rgba(
+    255,
+    255,
+    255,
+    0.08
+  );
+}
+
+
+.circle-bottom {
+
+  width: 280px;
+  height: 280px;
+
+  bottom: -150px;
+  left: -120px;
+
+  background: rgba(
+    255,
+    255,
+    255,
+    0.06
+  );
+}
+
+
+/* =====================================================
+   MAIN WHITE CARD
+   SAME LOGIN / REGISTER STYLE
+===================================================== */
+
+.documents-card {
+
+  position: relative;
+
+  z-index: 2;
+
+  width: 100%;
+
+  max-width: 430px;
+
+  min-height: 700px;
+
+  box-sizing: border-box;
+
+  padding: 22px 27px 30px;
+
+  border-radius: 34px;
+
+  background: #faf8ff;
+
+  box-shadow:
+    0 20px 55px
+    rgba(
+      42,
+      0,
+      100,
+      0.25
+    );
+}
+
+
+/* =====================================================
+   TOP HEADER
+===================================================== */
+
+.top-header {
+
+  display: flex;
+
+  align-items: center;
+
+  width: 100%;
+
+  margin-bottom: 14px;
+}
+
+
+.top-header h1 {
+
+  margin: 0;
+
+  color: #10275c;
+
+  font-size: 24px;
+
+  font-weight: 700;
+
+  line-height: 1;
+}
+
+
+/* Back button */
+
+.back-button {
+
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  margin-left: -8px;
+  margin-right: 5px;
+
+  padding: 0;
+
+  border: none;
+
+  outline: none;
+
+  background: transparent;
+
+  color: #10275c;
+
+  font-size: 31px;
+
+  cursor: pointer;
+}
+
+
+/* =====================================================
+   PAGE HEADING
+===================================================== */
 
 .page-heading {
+
   text-align: center;
-  margin-bottom: 20px;
+
+  margin-bottom: 24px;
 }
 
 
-.page-heading h1 {
-  font-size: 28px;
+/* =====================================================
+   TOP FOLDER LOGO
+===================================================== */
+
+.folder-logo {
+
+  width: 82px;
+  height: 82px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  margin: 0 auto 12px;
+
+  border-radius: 25px;
+
+  background: linear-gradient(
+    135deg,
+    #3766ff 0%,
+    #7031f4 55%,
+    #c000ee 100%
+  );
+
+  box-shadow:
+    0 10px 28px
+    rgba(
+      75,
+      40,
+      220,
+      0.25
+    );
+}
+
+
+.folder-svg {
+
+  width: 57px;
+  height: 57px;
+
+  display: block;
+}
+
+
+/* =====================================================
+   PAGE TITLE
+===================================================== */
+
+.page-heading h2 {
+
+  margin: 0 0 6px;
+
+  color: #10275c;
+
+  font-size: 31px;
+
   font-weight: 700;
-  margin-bottom: 8px;
+
+  line-height: 1.15;
 }
 
 
 .page-heading p {
-  color: #666;
-  margin-top: 0;
+
+  margin: 0;
+
+  color: #7c849d;
+
+  font-size: 13px;
+
+  line-height: 1.4;
 }
 
 
-ion-searchbar {
-  margin-bottom: 20px;
-}
+/* =====================================================
+   SEARCH BOX
+===================================================== */
 
+.search-box {
 
-/* Document Card */
+  width: 100%;
 
-.document-card {
+  height: 66px;
+
+  box-sizing: border-box;
+
   display: flex;
-  align-items: flex-start;
 
-  gap: 15px;
+  align-items: center;
 
-  padding: 18px;
+  padding: 0 18px;
 
-  margin-bottom: 15px;
+  margin-bottom: 32px;
 
-  border-radius: 12px;
+  border-radius: 24px;
 
   background: #ffffff;
 
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  box-shadow:
+    0 8px 22px
+    rgba(
+      50,
+      70,
+      130,
+      0.11
+    );
 }
 
 
-/* Document Icon */
+/* Search icon */
 
-.document-icon {
-  min-width: 50px;
-  height: 50px;
+.search-icon {
+
+  flex-shrink: 0;
+
+  width: 36px;
+  height: 36px;
+
+  margin-right: 12px;
+
+  color: #3156db;
+
+  font-size: 36px;
+}
+
+
+/* Search input */
+
+.search-box ion-input {
+
+  flex: 1;
+
+  width: 100%;
+
+  --padding-start: 0;
+  --padding-end: 0;
+
+  color: #26365f;
+
+  font-size: 18px;
+}
+
+
+.search-box ion-input::part(native) {
+
+  padding-left: 0;
+  padding-right: 0;
+}
+
+
+/* =====================================================
+   EMPTY STATE
+===================================================== */
+
+.empty-state {
+
+  width: 100%;
+
+  text-align: center;
+
+  padding-top: 18px;
+}
+
+
+/* =====================================================
+   BIG EMPTY FOLDER CIRCLE
+===================================================== */
+
+.empty-folder {
+
+  width: 175px;
+  height: 175px;
 
   display: flex;
+
   align-items: center;
   justify-content: center;
 
-  border-radius: 10px;
+  margin: 0 auto 14px;
 
-  background: #f0f0f0;
+  border-radius: 50%;
+
+  background: linear-gradient(
+    135deg,
+    rgba(62, 101, 232, 0.08),
+    rgba(193, 0, 238, 0.10)
+  );
+
+  box-shadow:
+    inset 0 0 30px
+    rgba(
+      80,
+      70,
+      220,
+      0.04
+    );
+}
+
+
+/* =====================================================
+   BIG EMPTY FOLDER ICON
+===================================================== */
+
+.empty-folder-svg {
+
+  width: 135px;
+  height: 135px;
+
+  display: block;
+
+  filter:
+    drop-shadow(
+      0 8px 12px
+      rgba(
+        57,
+        101,
+        232,
+        0.18
+      )
+    );
+}
+
+
+/* =====================================================
+   EMPTY STATE TITLE
+===================================================== */
+
+.empty-state h2 {
+
+  margin: 5px 0 11px;
+
+  color: #10275c;
+
+  font-size: 30px;
+
+  font-weight: 700;
+
+  line-height: 1.2;
+}
+
+
+/* =====================================================
+   EMPTY STATE DESCRIPTION
+===================================================== */
+
+.empty-state p {
+
+  max-width: 340px;
+
+  margin: 0 auto;
+
+  color: #7c849d;
+
+  font-size: 15px;
+
+  line-height: 1.5;
+}
+
+
+/* =====================================================
+   DOCUMENT LIST
+===================================================== */
+
+.documents-list {
+
+  width: 100%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 10px;
+}
+
+
+/* =====================================================
+   DOCUMENT ITEM
+===================================================== */
+
+.document-item {
+
+  width: 100%;
+
+  min-height: 76px;
+
+  box-sizing: border-box;
+
+  display: flex;
+
+  align-items: center;
+
+  padding: 10px 12px;
+
+  border-radius: 22px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 7px 18px
+    rgba(
+      50,
+      70,
+      130,
+      0.10
+    );
+}
+
+
+/* Document icon */
+
+.document-icon {
+
+  width: 50px;
+  height: 50px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  margin-right: 11px;
+
+  border-radius: 16px;
+
+  color: #2168db;
+
+  background: #eaf2ff;
 }
 
 
 .document-icon ion-icon {
-  font-size: 28px;
+
+  width: 27px;
+  height: 27px;
+
+  font-size: 27px;
 }
 
 
-/* Document Information */
+/* Document information */
 
 .document-info {
-  flex: 1;
 
-  overflow: hidden;
+  min-width: 0;
+
+  flex: 1;
 }
 
 
-.document-info h2 {
-  margin: 0 0 8px;
+.document-info h3 {
 
-  font-size: 18px;
-
-  font-weight: 600;
+  margin: 0 0 3px;
 
   overflow: hidden;
 
   text-overflow: ellipsis;
 
   white-space: nowrap;
+
+  color: #10275c;
+
+  font-size: 14px;
+
+  font-weight: 700;
 }
 
 
 .document-info p {
-  margin: 4px 0;
 
-  font-size: 14px;
+  margin: 0 0 2px;
 
-  color: #666;
+  color: #657291;
+
+  font-size: 11px;
 }
 
 
-.document-info .date {
-  font-size: 12px;
+.document-info span {
 
-  color: #999;
+  display: block;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+
+  color: #8b94aa;
+
+  font-size: 10px;
 }
 
 
-/* No Documents */
+/* Arrow */
 
-.no-documents {
-  text-align: center;
+.document-arrow {
 
-  margin-top: 70px;
+  flex-shrink: 0;
 
-  color: #777;
+  margin-left: 6px;
+
+  color: #10275c;
+
+  font-size: 22px;
 }
 
 
-.no-documents ion-icon {
-  font-size: 60px;
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+  .page-background {
+
+    padding: 12px;
+  }
+
+
+  .documents-card {
+
+    max-width: 430px;
+
+    min-height: 700px;
+
+    padding: 20px 20px 28px;
+
+    border-radius: 31px;
+  }
+
+
+  .top-header {
+
+    margin-bottom: 12px;
+  }
+
+
+  .top-header h1 {
+
+    font-size: 23px;
+  }
+
+
+  .back-button {
+
+    font-size: 30px;
+  }
+
+
+  .page-heading {
+
+    margin-bottom: 22px;
+  }
+
+
+  .folder-logo {
+
+    width: 78px;
+    height: 78px;
+
+    margin-bottom: 10px;
+
+    border-radius: 24px;
+  }
+
+
+  .folder-svg {
+
+    width: 54px;
+    height: 54px;
+  }
+
+
+  .page-heading h2 {
+
+    font-size: 29px;
+  }
+
+
+  .page-heading p {
+
+    font-size: 12px;
+  }
+
+
+  .search-box {
+
+    height: 64px;
+
+    margin-bottom: 25px;
+
+    border-radius: 23px;
+  }
+
+
+  .search-icon {
+
+    width: 34px;
+    height: 34px;
+
+    font-size: 34px;
+  }
+
+
+  .search-box ion-input {
+
+    font-size: 17px;
+  }
+
+
+  /* BIGGER EMPTY STATE ON MOBILE */
+
+  .empty-state {
+
+    padding-top: 12px;
+  }
+
+
+  .empty-folder {
+
+    width: 155px;
+    height: 155px;
+
+    margin-bottom: 12px;
+  }
+
+
+  .empty-folder-svg {
+
+    width: 120px;
+    height: 120px;
+  }
+
+
+  .empty-state h2 {
+
+    font-size: 27px;
+
+    margin-bottom: 10px;
+  }
+
+
+  .empty-state p {
+
+    font-size: 14px;
+
+    max-width: 320px;
+  }
 }
 
 
-.no-documents h2 {
-  font-size: 20px;
+/* =====================================================
+   SMALL PHONES
+===================================================== */
+
+@media (max-width: 380px) {
+
+  .documents-card {
+
+    padding-left: 17px;
+    padding-right: 17px;
+
+    border-radius: 28px;
+  }
+
+
+  .top-header h1 {
+
+    font-size: 21px;
+  }
+
+
+  .folder-logo {
+
+    width: 70px;
+    height: 70px;
+  }
+
+
+  .folder-svg {
+
+    width: 49px;
+    height: 49px;
+  }
+
+
+  .page-heading h2 {
+
+    font-size: 26px;
+  }
+
+
+  .search-box {
+
+    height: 60px;
+  }
+
+
+  .empty-folder {
+
+    width: 140px;
+    height: 140px;
+  }
+
+
+  .empty-folder-svg {
+
+    width: 108px;
+    height: 108px;
+  }
+
+
+  .empty-state h2 {
+
+    font-size: 24px;
+  }
 }
