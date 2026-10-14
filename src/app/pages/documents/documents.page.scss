@@ -18,23 +18,17 @@ ion-content {
 ===================================================== */
 
 .page-background {
-
   position: relative;
-
   width: 100%;
   min-height: 100%;
 
   box-sizing: border-box;
 
   display: flex;
-
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
 
   padding: 18px;
-
-  overflow-x: hidden;
-  overflow-y: auto;
 
   background: linear-gradient(
     145deg,
@@ -51,7 +45,6 @@ ion-content {
 ===================================================== */
 
 .background-circle {
-
   position: absolute;
 
   border-radius: 50%;
@@ -62,8 +55,9 @@ ion-content {
 }
 
 
-.circle-top {
+/* Top circle */
 
+.circle-top {
   width: 280px;
   height: 280px;
 
@@ -79,8 +73,9 @@ ion-content {
 }
 
 
-.circle-bottom {
+/* Bottom circle */
 
+.circle-bottom {
   width: 280px;
   height: 280px;
 
@@ -102,16 +97,12 @@ ion-content {
 ===================================================== */
 
 .documents-card {
-
   position: relative;
 
   z-index: 2;
 
   width: 100%;
-
   max-width: 430px;
-
-  min-height: 700px;
 
   box-sizing: border-box;
 
@@ -129,6 +120,8 @@ ion-content {
       100,
       0.25
     );
+
+  margin: 20px 0;
 }
 
 
@@ -137,7 +130,6 @@ ion-content {
 ===================================================== */
 
 .top-header {
-
   display: flex;
 
   align-items: center;
@@ -149,7 +141,6 @@ ion-content {
 
 
 .top-header h1 {
-
   margin: 0;
 
   color: #10275c;
@@ -162,10 +153,11 @@ ion-content {
 }
 
 
-/* Back button */
+/* =====================================================
+   BACK BUTTON
+===================================================== */
 
 .back-button {
-
   width: 40px;
   height: 40px;
 
@@ -180,7 +172,6 @@ ion-content {
   padding: 0;
 
   border: none;
-
   outline: none;
 
   background: transparent;
@@ -198,7 +189,6 @@ ion-content {
 ===================================================== */
 
 .page-heading {
-
   text-align: center;
 
   margin-bottom: 24px;
@@ -210,7 +200,6 @@ ion-content {
 ===================================================== */
 
 .folder-logo {
-
   width: 82px;
   height: 82px;
 
@@ -242,7 +231,6 @@ ion-content {
 
 
 .folder-svg {
-
   width: 57px;
   height: 57px;
 
@@ -255,7 +243,6 @@ ion-content {
 ===================================================== */
 
 .page-heading h2 {
-
   margin: 0 0 6px;
 
   color: #10275c;
@@ -269,7 +256,6 @@ ion-content {
 
 
 .page-heading p {
-
   margin: 0;
 
   color: #7c849d;
@@ -285,7 +271,6 @@ ion-content {
 ===================================================== */
 
 .search-box {
-
   width: 100%;
 
   height: 66px;
@@ -315,10 +300,11 @@ ion-content {
 }
 
 
-/* Search icon */
+/* =====================================================
+   SEARCH ICON
+===================================================== */
 
 .search-icon {
-
   flex-shrink: 0;
 
   width: 36px;
@@ -332,10 +318,11 @@ ion-content {
 }
 
 
-/* Search input */
+/* =====================================================
+   SEARCH INPUT
+===================================================== */
 
 .search-box ion-input {
-
   flex: 1;
 
   width: 100%;
@@ -350,7 +337,6 @@ ion-content {
 
 
 .search-box ion-input::part(native) {
-
   padding-left: 0;
   padding-right: 0;
 }
@@ -361,7 +347,6 @@ ion-content {
 ===================================================== */
 
 .empty-state {
-
   width: 100%;
 
   text-align: center;
@@ -375,7 +360,6 @@ ion-content {
 ===================================================== */
 
 .empty-folder {
-
   width: 175px;
   height: 175px;
 
@@ -410,7 +394,6 @@ ion-content {
 ===================================================== */
 
 .empty-folder-svg {
-
   width: 135px;
   height: 135px;
 
@@ -434,7 +417,6 @@ ion-content {
 ===================================================== */
 
 .empty-state h2 {
-
   margin: 5px 0 11px;
 
   color: #10275c;
@@ -452,7 +434,6 @@ ion-content {
 ===================================================== */
 
 .empty-state p {
-
   max-width: 340px;
 
   margin: 0 auto;
@@ -470,7 +451,6 @@ ion-content {
 ===================================================== */
 
 .documents-list {
-
   width: 100%;
 
   display: flex;
@@ -486,7 +466,6 @@ ion-content {
 ===================================================== */
 
 .document-item {
-
   width: 100%;
 
   min-height: 76px;
@@ -514,10 +493,11 @@ ion-content {
 }
 
 
-/* Document icon */
+/* =====================================================
+   DOCUMENT ICON
+===================================================== */
 
 .document-icon {
-
   width: 50px;
   height: 50px;
 
@@ -539,7 +519,6 @@ ion-content {
 
 
 .document-icon ion-icon {
-
   width: 27px;
   height: 27px;
 
@@ -547,10 +526,11 @@ ion-content {
 }
 
 
-/* Document information */
+/* =====================================================
+   DOCUMENT INFORMATION
+===================================================== */
 
 .document-info {
-
   min-width: 0;
 
   flex: 1;
@@ -558,7 +538,6 @@ ion-content {
 
 
 .document-info h3 {
-
   margin: 0 0 3px;
 
   overflow: hidden;
@@ -576,7 +555,6 @@ ion-content {
 
 
 .document-info p {
-
   margin: 0 0 2px;
 
   color: #657291;
@@ -586,7 +564,6 @@ ion-content {
 
 
 .document-info span {
-
   display: block;
 
   overflow: hidden;
@@ -601,10 +578,11 @@ ion-content {
 }
 
 
-/* Arrow */
+/* =====================================================
+   DOCUMENT ARROW
+===================================================== */
 
 .document-arrow {
-
   flex-shrink: 0;
 
   margin-left: 6px;
@@ -622,49 +600,42 @@ ion-content {
 @media (max-width: 600px) {
 
   .page-background {
-
     padding: 12px;
   }
 
 
   .documents-card {
-
     max-width: 430px;
 
-    min-height: 700px;
-
     padding: 20px 20px 28px;
+
+    margin: 10px 0 20px;
 
     border-radius: 31px;
   }
 
 
   .top-header {
-
     margin-bottom: 12px;
   }
 
 
   .top-header h1 {
-
     font-size: 23px;
   }
 
 
   .back-button {
-
     font-size: 30px;
   }
 
 
   .page-heading {
-
     margin-bottom: 22px;
   }
 
 
   .folder-logo {
-
     width: 78px;
     height: 78px;
 
@@ -675,26 +646,22 @@ ion-content {
 
 
   .folder-svg {
-
     width: 54px;
     height: 54px;
   }
 
 
   .page-heading h2 {
-
     font-size: 29px;
   }
 
 
   .page-heading p {
-
     font-size: 12px;
   }
 
 
   .search-box {
-
     height: 64px;
 
     margin-bottom: 25px;
@@ -704,7 +671,6 @@ ion-content {
 
 
   .search-icon {
-
     width: 34px;
     height: 34px;
 
@@ -713,7 +679,6 @@ ion-content {
 
 
   .search-box ion-input {
-
     font-size: 17px;
   }
 
@@ -721,13 +686,11 @@ ion-content {
   /* BIGGER EMPTY STATE ON MOBILE */
 
   .empty-state {
-
     padding-top: 12px;
   }
 
 
   .empty-folder {
-
     width: 155px;
     height: 155px;
 
@@ -736,14 +699,12 @@ ion-content {
 
 
   .empty-folder-svg {
-
     width: 120px;
     height: 120px;
   }
 
 
   .empty-state h2 {
-
     font-size: 27px;
 
     margin-bottom: 10px;
@@ -751,11 +712,11 @@ ion-content {
 
 
   .empty-state p {
-
     font-size: 14px;
 
     max-width: 320px;
   }
+
 }
 
 
@@ -766,8 +727,8 @@ ion-content {
 @media (max-width: 380px) {
 
   .documents-card {
-
     padding-left: 17px;
+
     padding-right: 17px;
 
     border-radius: 28px;
@@ -775,53 +736,46 @@ ion-content {
 
 
   .top-header h1 {
-
     font-size: 21px;
   }
 
 
   .folder-logo {
-
     width: 70px;
     height: 70px;
   }
 
 
   .folder-svg {
-
     width: 49px;
     height: 49px;
   }
 
 
   .page-heading h2 {
-
     font-size: 26px;
   }
 
 
   .search-box {
-
     height: 60px;
   }
 
 
   .empty-folder {
-
     width: 140px;
     height: 140px;
   }
 
 
   .empty-folder-svg {
-
     width: 108px;
     height: 108px;
   }
 
 
   .empty-state h2 {
-
     font-size: 24px;
   }
+
 }

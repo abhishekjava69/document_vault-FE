@@ -382,6 +382,38 @@ ion-content {
   flex: 1;
 }
 
+.error {
+  margin: -7px 12px 12px;
+  color: #c62828;
+  font-size: 12px;
+}
+
+.api-message {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin: 4px 0 14px;
+  padding: 11px 13px;
+  border-radius: 12px;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.api-message ion-icon {
+  flex: 0 0 auto;
+  font-size: 18px;
+}
+
+.error-message {
+  color: #9f2020;
+  background: #fff0f0;
+}
+
+.success-message {
+  color: #176b37;
+  background: #eaf8ef;
+}
+
 
 /* =========================================
    PASSWORD EYE

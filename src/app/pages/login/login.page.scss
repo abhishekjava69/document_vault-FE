@@ -279,6 +279,24 @@ ion-content {
   color: #293452;
 }
 
+.api-error {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin: 0 0 16px;
+  padding: 11px 13px;
+  border-radius: 12px;
+  color: #9f2020;
+  background: #fff0f0;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.api-error ion-icon {
+  flex: 0 0 auto;
+  font-size: 18px;
+}
+
 
 /* ================================
    PASSWORD BUTTON

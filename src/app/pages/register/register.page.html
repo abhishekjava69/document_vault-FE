@@ -1,27 +1,19 @@
+
 <ion-content [fullscreen]="true">
 
   <div class="login-background">
 
-    <!-- Decorative background shapes -->
     <div class="shape shape-1"></div>
     <div class="shape shape-2"></div>
     <div class="shape shape-3"></div>
 
-
-    <!-- Main Card -->
     <div class="login-card">
 
-      <!-- ================================
-           LOGO
-      ================================= -->
-
+      <!-- LOGO -->
       <div class="logo-container">
-
         <div class="logo-icon">
 
-          <ion-icon
-            name="document-text-outline">
-          </ion-icon>
+          <ion-icon name="document-text-outline"></ion-icon>
 
           <ion-icon
             class="lock-icon"
@@ -29,209 +21,212 @@
           </ion-icon>
 
         </div>
-
       </div>
 
-
-      <!-- ================================
-           APP TITLE
-      ================================= -->
-
-      <h1 class="app-title">
-        Document Vault
-      </h1>
+      <!-- APP TITLE -->
+      <h1 class="app-title">Document Vault</h1>
 
       <p class="app-subtitle">
         Your Documents&nbsp; • &nbsp;Your Security
       </p>
 
-
-      <!-- ================================
-           CREATE ACCOUNT TITLE
-      ================================= -->
-
+      <!-- CREATE ACCOUNT -->
       <div class="welcome-section">
-
-        <h2>
-          Create Account
-        </h2>
-
-        <p>
-          Create your Document Vault account
-        </p>
-
+        <h2>Create Account</h2>
+        <p>Create your Document Vault account</p>
       </div>
 
+      <!-- REGISTER FORM -->
+      <form
+        class="register-form"
+        [formGroup]="registerForm"
+        (ngSubmit)="onRegister()"
+        novalidate>
 
-      <!-- ================================
-           REGISTER FORM
-      ================================= -->
-
-      <div class="register-form">
-
-
-        <!-- Full Name -->
+        <!-- FULL NAME -->
         <div class="input-container">
-
           <div class="input-icon">
-
-            <ion-icon
-              name="person-outline">
-            </ion-icon>
-
+            <ion-icon name="person-outline"></ion-icon>
           </div>
 
           <ion-input
             type="text"
-            placeholder="Full Name">
+            placeholder="Full Name"
+            formControlName="name"
+            autocomplete="name"
+            maxlength="100">
           </ion-input>
-
         </div>
 
+        @if (registerForm.controls.name.touched &&
+             registerForm.controls.name.invalid) {
+          <p class="error" role="alert">
+            Please enter your full name.
+          </p>
+        }
 
-        <!-- Email -->
+        <!-- EMAIL -->
         <div class="input-container">
-
           <div class="input-icon">
-
-            <ion-icon
-              name="mail-outline">
-            </ion-icon>
-
+            <ion-icon name="mail-outline"></ion-icon>
           </div>
 
           <ion-input
             type="email"
-            placeholder="Email">
+            placeholder="Email"
+            formControlName="email"
+            autocomplete="email">
           </ion-input>
-
         </div>
 
+        @if (registerForm.controls.email.touched &&
+             registerForm.controls.email.invalid) {
+          <p class="error" role="alert">
+            Please enter a valid email address.
+          </p>
+        }
 
-        <!-- Mobile Number -->
+        <!-- MOBILE -->
         <div class="input-container">
-
           <div class="input-icon">
-
-            <ion-icon
-              name="phone-portrait-outline">
-            </ion-icon>
-
+            <ion-icon name="phone-portrait-outline"></ion-icon>
           </div>
 
           <ion-input
             type="tel"
-            placeholder="Mobile Number">
+            placeholder="Mobile Number"
+            formControlName="phone"
+            autocomplete="tel"
+            maxlength="15">
           </ion-input>
-
         </div>
 
+        @if (registerForm.controls.phone.touched &&
+             registerForm.controls.phone.invalid) {
+          <p class="error" role="alert">
+            Enter a valid mobile number using 10–15 digits.
+          </p>
+        }
 
-        <!-- Password -->
+        <!-- PASSWORD -->
         <div class="input-container">
-
           <div class="input-icon">
-
-            <ion-icon
-              name="lock-closed-outline">
-            </ion-icon>
-
+            <ion-icon name="lock-closed-outline"></ion-icon>
           </div>
 
           <ion-input
-            type="password"
-            placeholder="Password">
+            [type]="showPassword ? 'text' : 'password'"
+            placeholder="Password"
+            formControlName="password"
+            autocomplete="new-password">
           </ion-input>
 
           <ion-button
+            type="button"
             fill="clear"
-            class="password-toggle">
+            class="password-toggle"
+            aria-label="Toggle password visibility"
+            (click)="showPassword = !showPassword">
 
             <ion-icon
               slot="icon-only"
-              name="eye-outline">
+              [name]="showPassword ? 'eye-off-outline' : 'eye-outline'">
             </ion-icon>
 
           </ion-button>
-
         </div>
 
+        @if (registerForm.controls.password.touched &&
+             registerForm.controls.password.invalid) {
+          <p class="error" role="alert">
+            Password must contain at least 4 characters.
+          </p>
+        }
 
-        <!-- Confirm Password -->
+        <!-- CONFIRM PASSWORD -->
         <div class="input-container">
-
           <div class="input-icon">
-
-            <ion-icon
-              name="shield-checkmark-outline">
-            </ion-icon>
-
+            <ion-icon name="shield-checkmark-outline"></ion-icon>
           </div>
 
           <ion-input
-            type="password"
-            placeholder="Confirm Password">
+            [type]="showConfirmPassword ? 'text' : 'password'"
+            placeholder="Confirm Password"
+            formControlName="confirmPassword"
+            autocomplete="new-password">
           </ion-input>
 
           <ion-button
+            type="button"
             fill="clear"
-            class="password-toggle">
+            class="password-toggle"
+            aria-label="Toggle confirm password visibility"
+            (click)="showConfirmPassword = !showConfirmPassword">
 
             <ion-icon
               slot="icon-only"
-              name="eye-outline">
+              [name]="showConfirmPassword ? 'eye-off-outline' : 'eye-outline'">
             </ion-icon>
 
           </ion-button>
-
         </div>
 
+        @if (registerForm.controls.confirmPassword.touched &&
+             registerForm.hasError('passwordMismatch')) {
+          <p class="error" role="alert">
+            Passwords do not match.
+          </p>
+        }
 
-        <!-- ================================
-             CREATE ACCOUNT BUTTON
-        ================================= -->
+       <!-- API ERROR -->
+@if (errorMessage) {
+  <div class="api-message error-message" role="alert" aria-live="polite">
+    <ion-icon name="alert-circle-outline"></ion-icon>
+    <span>{{ errorMessage }}</span>
+  </div>
+}
 
+<!-- API SUCCESS -->
+@if (successMessage) {
+  <div class="api-message success-message" role="status" aria-live="polite">
+    <ion-icon name="checkmark-circle-outline"></ion-icon>
+    <span>{{ successMessage }}</span>
+  </div>
+}
+
+        <!-- CREATE ACCOUNT BUTTON -->
         <ion-button
           expand="block"
           class="login-button"
-          routerLink="/login">
+          type="submit"
+          [disabled]="isSubmitting">
 
           <ion-icon
             slot="start"
             name="person-add-outline">
           </ion-icon>
 
-          CREATE ACCOUNT
+          {{ isSubmitting ? 'CREATING ACCOUNT...' : 'CREATE ACCOUNT' }}
 
         </ion-button>
 
-
-        <!-- ================================
-             LOGIN LINK
-        ================================= -->
-
+        <!-- LOGIN LINK -->
         <div class="register-section">
 
-          <span>
-            ALREADY HAVE AN ACCOUNT?
-          </span>
+          <span>ALREADY HAVE AN ACCOUNT?</span>
 
           <button
             type="button"
             class="login-link"
             routerLink="/login">
-
             LOGIN
-
           </button>
 
         </div>
 
-
-      </div>
+      </form>
 
     </div>
-
   </div>
 
 </ion-content>

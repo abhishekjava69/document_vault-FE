@@ -47,6 +47,7 @@
         <ion-input
           type="email"
           placeholder="Email address"
+          autocomplete="username"
           [(ngModel)]="email">
         </ion-input>
 
@@ -62,12 +63,16 @@
         <ion-input
           [type]="showPassword ? 'text' : 'password'"
           placeholder="Password"
+          minlength="4"
+          maxlength="20"
+          autocomplete="current-password"
           [(ngModel)]="password">
         </ion-input>
 
         <ion-button
           fill="clear"
           class="password-toggle"
+          type="button"
           (click)="togglePassword()">
 
           <ion-icon
@@ -77,6 +82,13 @@
         </ion-button>
 
       </div>
+
+      @if (errorMessage) {
+        <div class="api-error" role="alert" aria-live="polite">
+          <ion-icon name="alert-circle-outline"></ion-icon>
+          <span>{{ errorMessage }}</span>
+        </div>
+      }
 
       <!-- Remember / Forgot -->
       <div class="options-row">
@@ -106,6 +118,7 @@
       <ion-button
         expand="block"
         class="login-button"
+        [disabled]="isSubmitting"
         (click)="login()">
 
         <ion-icon
@@ -113,7 +126,7 @@
           name="log-in-outline">
         </ion-icon>
 
-        Login
+        {{ isSubmitting ? 'Signing in...' : 'Login' }}
 
       </ion-button>
 
